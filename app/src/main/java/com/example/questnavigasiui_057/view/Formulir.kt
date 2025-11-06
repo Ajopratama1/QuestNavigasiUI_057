@@ -75,3 +75,41 @@ fun FormIsian(
                 color = Color.Red
             )
 
+            Row {
+                jenisK.forEach { item ->
+                    Row(verticalAlignment = Alignment.CenterVertically) { // 6. 'verticalAlignment' dan 'Alignment'
+                        RadioButton(
+                            selected = false,
+                            onClick = { /* Aksi saat diklik */ } // 7. Lambda untuk onClick harus di dalam {}
+                        )
+                        Text(text = item)
+                    }
+                }
+            }
+            HorizontalDivider(
+                modifier = Modifier
+                    .padding(20.dp)
+                    .width(250.dp), // 8. Tambahkan koma di sini
+                thickness = 1.dp,
+                color = Color.Red
+            )
+
+            OutlinedTextField(
+                value = "",
+                singleLine = true, // 9. Perbaikan typo 'singelLine'
+                modifier = Modifier
+                    .width(250.dp),
+                label = { Text(text = "Alamat") },
+                onValueChange = {},
+            )
+            Spacer(modifier = Modifier.height(30.dp)) // 10. Menggunakan 'Spacer' dari Compose
+            Button(
+                modifier = Modifier.fillMaxWidth(1f),
+                onClick = OnSubmitBtnClick
+            ) {
+                // 11. Lengkapi ID resource string untuk teks tombol
+                Text(stringResource(id = R.string.submit))
+            }
+        }
+    }
+}
