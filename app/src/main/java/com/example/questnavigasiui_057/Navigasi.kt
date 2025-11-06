@@ -16,3 +16,8 @@ enum class Navigasi {
 }
 
 
+@Composable
+fun DataApp(
+    navController: NavHostController = rememberNavController(),
+    modifier: Modifier
+)
