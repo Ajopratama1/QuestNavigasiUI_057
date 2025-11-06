@@ -50,3 +50,28 @@ fun FormIsian(
                 )
             )
         }
+    ) { isiRuang ->
+        Column(
+            modifier = Modifier.padding(isiRuang),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally
+        )
+        {
+            // 3. Menggunakan OutlinedTextField dari Material3
+            OutlinedTextField(
+                value = "",
+                singleLine = true, // 4. Nama parameter 'singleLine' bukan 'singelLine'
+                modifier = Modifier
+                    .padding(top = 20.dp)
+                    .width(250.dp),
+                label = { Text(text = "Nama Lengkap") },
+                onValueChange = {},
+            )
+            HorizontalDivider(
+                modifier = Modifier
+                    .padding(20.dp)
+                    .width(250.dp),
+                thickness = 1.dp, // 5. 'thickness' harus memiliki nilai (misal: 1.dp)
+                color = Color.Red
+            )
+
